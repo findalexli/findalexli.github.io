@@ -1,0 +1,499 @@
+/* ==========================================================================
+   Personal Academic Website Stylesheet
+   Clean, minimal academic style inspired by lilei-nlp.github.io
+   ========================================================================== */
+
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --accent: #2c5282;
+  --accent-light: #ebf2ff;
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
+  --border: #e2e8f0;
+  --bg: #ffffff;
+  --bg-subtle: #f7fafc;
+  --radius: 6px;
+  --max-width: 860px;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--text-primary);
+  background: var(--bg);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #1a365d;
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- Container ---------- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 24px 0;
+}
+
+/* ---------- Profile Header ---------- */
+header.profile {
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+
+.profile-photo {
+  flex-shrink: 0;
+}
+
+.profile-photo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.profile-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-info h1 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.profile-info .affiliation {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+
+.profile-info .affiliation-sub {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+/* Contact link pills */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--accent-light);
+  border: 1px solid rgba(44, 82, 130, 0.15);
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.contact-links a:hover {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+.contact-links a i,
+.contact-links a svg,
+.contact-links a img {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* ---------- Sections ---------- */
+section {
+  padding: 32px 0 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+section h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 36px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+section p {
+  color: var(--text-secondary);
+  font-size: 0.97rem;
+  line-height: 1.75;
+}
+
+/* ---------- About ---------- */
+#about p {
+  margin-bottom: 12px;
+}
+
+#about p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- News ---------- */
+.news-list {
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.news-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.news-list::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.news-list li {
+  padding: 8px 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  border-bottom: 1px dashed var(--border);
+}
+
+.news-list li:last-child {
+  border-bottom: none;
+}
+
+.news-date {
+  display: inline-block;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  min-width: 100px;
+  margin-right: 10px;
+}
+
+/* ---------- Education & Experience Lists ---------- */
+.education-list li,
+.experience-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.6;
+}
+
+.education-list li:last-child,
+.experience-list li:last-child {
+  border-bottom: none;
+}
+
+.education-list li strong,
+.experience-list li strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.detail {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.date {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 2px;
+}
+
+/* ---------- Publications ---------- */
+.pub-item {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.pub-item:last-child {
+  border-bottom: none;
+}
+
+.pub-title {
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+.pub-title a {
+  color: var(--text-primary);
+}
+
+.pub-title a:hover {
+  color: var(--accent);
+}
+
+.pub-authors {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 3px;
+  line-height: 1.55;
+}
+
+.pub-venue {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pub-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+  background: var(--accent-light);
+  border: 1px solid rgba(44, 82, 130, 0.15);
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
+}
+
+.pub-links a:hover {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+/* ---------- Patents ---------- */
+.patent-list li {
+  padding: 10px 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  line-height: 1.6;
+}
+
+.patent-list li:last-child {
+  border-bottom: none;
+}
+
+.patent-list li strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ---------- Talks ---------- */
+#talks ul li {
+  padding: 8px 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  border-bottom: 1px dashed var(--border);
+  line-height: 1.6;
+}
+
+#talks ul li:last-child {
+  border-bottom: none;
+}
+
+/* ---------- Service ---------- */
+#service ul li {
+  padding: 6px 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ---------- Footer ---------- */
+footer,
+#footer {
+  text-align: center;
+  padding: 32px 0;
+  margin-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+footer a,
+#footer a {
+  color: var(--accent);
+}
+
+/* ---------- Responsive ---------- */
+@media screen and (max-width: 640px) {
+  .container {
+    padding: 24px 16px 0;
+  }
+
+  header.profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .profile-photo img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .profile-info h1 {
+    font-size: 1.5rem;
+  }
+
+  .contact-links {
+    justify-content: center;
+  }
+
+  section {
+    padding: 24px 0 20px;
+  }
+
+  section h2 {
+    font-size: 1.2rem;
+  }
+
+  section h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .news-date {
+    display: block;
+    margin-bottom: 2px;
+    min-width: unset;
+  }
+
+  .pub-title {
+    font-size: 0.96rem;
+  }
+
+  .pub-authors,
+  .pub-venue {
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .profile-photo img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .contact-links a {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+  }
+
+  .pub-links a {
+    font-size: 0.74rem;
+    padding: 2px 9px;
+  }
+}
+
+/* ---------- Print ---------- */
+@media print {
+  body {
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+
+  a {
+    color: var(--text-primary);
+    text-decoration: underline;
+  }
+
+  .news-list {
+    max-height: none;
+    overflow: visible;
+  }
+}
