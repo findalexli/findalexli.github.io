@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shengzhi (Alex) Li - Research Engineer at Meta working on Llama post-training. Research in Large Language Models, Multi-modal LLMs, and Alignment.">
-    <meta name="keywords" content="Shengzhi Li, Alex Li, Meta, Llama, Reka AI, LLM, Multi-modal, Alignment, NLP, Machine Learning, ACL 2024, SciGraphQA">
+    <meta name="description" content="Shengzhi (Alex) Li - Research Engineer at Meta on Muse post-training. Research on LLM post-training, coding agents, AI for science, and multi-modal LLMs.">
+    <meta name="keywords" content="Shengzhi Li, Alex Li, Meta, Muse, Post-training, SWE-Together, Coding Agents, AppliedScientist, Reka AI, LLM, Multi-modal, Alignment, ACL 2024, SciGraphQA">
     <meta name="author" content="Shengzhi Li">
     <meta property="og:title" content="Shengzhi (Alex) Li - Research Engineer at Meta">
-    <meta property="og:description" content="Research Engineer at Meta working on Llama post-training. Research in Large Language Models, Multi-modal LLMs, and Alignment.">
+    <meta property="og:description" content="Research Engineer at Meta on Muse post-training. Research on LLM post-training, coding agents, AI for science, and multi-modal LLMs.">
     <meta property="og:type" content="website">
     <title>Shengzhi (Alex) Li</title>
     <link rel="stylesheet" href="style.css">
@@ -27,7 +27,7 @@
             <td class="profile-text-td">
                 <h1>Shengzhi (Alex) Li</h1>
                 <p>
-                    I am a Research Engineer at <a href="https://ai.meta.com/">Meta</a>, working on post-training for the Llama model family. Previously, I was at <a href="https://reka.ai/">Reka AI</a> (contributing to Reka-flash-3), <a href="https://tifin.com/">TIFIN</a> (JPMorgan-backed fintech), and <a href="https://calahealth.com/">Cala Health</a> (3 patents on neurostimulation devices, now Medicare-covered). My research focuses on Large Language Models, Multi-modal LLMs, and Alignment.
+                    I am a Research Engineer at <a href="https://ai.meta.com/">Meta</a>, working on <strong>Muse post-training</strong>. Recently I co-led <a href="https://togetherbench.com">SWE-Together</a>, a benchmark that evaluates coding agents in interactive, multi-turn sessions with real users. Previously, I was at <a href="https://reka.ai/">Reka AI</a> (contributing to Reka-flash-3), <a href="https://tifin.com/">TIFIN</a> (JPMorgan-backed fintech), and <a href="https://calahealth.com/">Cala Health</a> (3 patents on neurostimulation devices, now Medicare-covered). My research focuses on LLM post-training and evaluation, coding agents, AI for scientific research, and multi-modal LLMs.
                 </p>
                 <p class="icon-links">
                     <a href="mailto:alex.shengzhi@gmail.com" title="Email"><i class="fas fa-envelope"></i> Email</a>
@@ -44,8 +44,12 @@
     <h2>News</h2>
     <div class="news-box">
         <table class="news-table">
+            <tr><td class="news-date">[Oct 2026]</td><td>Released <strong>Video Evidence Indexing</strong>: learning where to look from cheap video previews for token-budgeted long-video QA.</td></tr>
+            <tr><td class="news-date">[Sep 2026]</td><td>Released <strong><a href="https://theappliedscientist.github.io/">AppliedScientist</a></strong>: an AI scientist that revises rejected papers under an iterative AI reviewer, resolving 85% of execution-related weaknesses.</td></tr>
+            <tr><td class="news-date">[Jun 2026]</td><td>Released <strong><a href="https://togetherbench.com">SWE-Together</a></strong> (project co-lead): evaluating coding agents in interactive user sessions. Accepted to an <strong>ICLR 2026 workshop</strong>.</td></tr>
+            <tr><td class="news-date">[Apr 2026]</td><td>Released <strong><a href="https://pushupbench.com/">PushupBench</a></strong>: frontier VLMs still can't count pushups. Now part of <code>lmms-eval</code>.</td></tr>
             <tr><td class="news-date">[Mar 2026]</td><td>Released <strong>IntelliAsk</strong>: learning to ask high-quality research questions via RLVR. Outperforms GPT-5 and Gemini 2.5 Pro.</td></tr>
-            <tr><td class="news-date">[Jun 2025]</td><td>Joined <strong>Meta</strong> as Research Engineer on the Llama post-training team.</td></tr>
+            <tr><td class="news-date">[Jun 2025]</td><td>Joined <strong>Meta</strong> as Research Engineer, now on <strong>Muse post-training</strong>.</td></tr>
             <tr><td class="news-date">[2025]</td><td>Selected as <strong>ICLR 2025 Top Reviewer</strong>.</td></tr>
             <tr><td class="news-date">[2025]</td><td>Reviewing for <strong>ICML 2025</strong>, <strong>AISTATS 2025</strong>, <strong>IEEE SSCI 2025</strong>.</td></tr>
             <tr><td class="news-date">[2024]</td><td>Selected as <strong>NeurIPS 2024 Top Reviewer</strong> (top 10%).</td></tr>
@@ -64,6 +68,89 @@
 
     <table class="pub-table">
 
+        <!-- SWE-Together 2026 -->
+        <tr>
+<td class="pub-text-td">
+                <span class="pub-title">
+                    <a href="https://arxiv.org/abs/2606.29957">SWE-Together: Evaluating Coding Agents in Interactive User Sessions</a>
+                </span>
+                <br>
+                Yifan Wu*, Zhuokai Zhao, Songlin Li, Ho Hin Lee, Jiacheng Zhu, Shirley Wu, Tianhe Yu, Serena Li, Lizhu Zhang, Xiangjun Fan, <strong>Shengzhi Li*</strong>
+                <br>
+                <em>ICLR 2026 Workshop</em> &middot; <em>arXiv 2026</em> &middot; *Project Co-Lead
+                <br>
+                <span class="pub-desc">A multi-turn coding-agent benchmark of 109 repository-level tasks reconstructed from 11,260 real user&ndash;agent sessions, replayed with a reactive user simulator. Agents are scored on both final correctness and how many user corrections they need.</span>
+                <br>
+                <span class="pub-links">
+                    <a href="https://arxiv.org/abs/2606.29957">[Paper]</a>
+                    <a href="https://togetherbench.com">[Website &amp; Leaderboard]</a>
+                    <a href="https://github.com/Togetherbench/SWE-Together">[Code]</a>
+                    <a href="https://huggingface.co/datasets/yfwu/SWE-Together">[Dataset]</a>
+                </span>
+            </td>
+        </tr>
+
+        <!-- AppliedScientist 2026 -->
+        <tr>
+<td class="pub-text-td">
+                <span class="pub-title">
+                    <a href="https://arxiv.org/abs/2609.14738">AppliedScientist: Automated Scientific Revision Through Iterative AI Reviewing</a>
+                </span>
+                <br>
+                Vidushee Vats, Karun Sharma, <strong>Shengzhi Li</strong>, Shichao Pei
+                <br>
+                <em>arXiv 2026</em>
+                <br>
+                <span class="pub-desc">A closed-loop system pairing an autonomous AI scientist with an AI reviewer to revise rejected ICLR papers. Reviewer-guided revision raises scores from 5.37 to 6.53 and resolves 85% of execution-related weaknesses, but only 11% of idea-related ones.</span>
+                <br>
+                <span class="pub-links">
+                    <a href="https://arxiv.org/abs/2609.14738">[Paper]</a>
+                    <a href="https://theappliedscientist.github.io/">[Project]</a>
+                    <a href="https://github.com/TheAppliedScientist/TheAppliedScientist">[Code]</a>
+                </span>
+            </td>
+        </tr>
+
+        <!-- Video Evidence Indexing 2026 -->
+        <tr>
+<td class="pub-text-td">
+                <span class="pub-title">
+                    <a href="https://arxiv.org/abs/2610.00757">Video Evidence Indexing: Learning Where to Look from Video Previews for Token-Budgeted Long-Video Question Answering</a>
+                </span>
+                <br>
+                Haowen Guan, <strong>Shengzhi Li</strong>, Shichao Pei
+                <br>
+                <em>arXiv 2026</em>
+                <br>
+                <span class="pub-desc">Uses a cheap low-resolution video preview to decide where to spend a limited high-resolution frame budget, trained with privileged self-distillation from an answer-aware teacher.</span>
+                <br>
+                <span class="pub-links">
+                    <a href="https://arxiv.org/abs/2610.00757">[Paper]</a>
+                </span>
+            </td>
+        </tr>
+
+        <!-- PushupBench 2026 -->
+        <tr>
+<td class="pub-text-td">
+                <span class="pub-title">
+                    <a href="https://arxiv.org/abs/2604.23407">PushupBench: Your VLM is not good at counting pushups</a>
+                </span>
+                <br>
+                <strong>Shengzhi Li</strong>, Jiarun Chen, Karun Sharma, Jiaqi Su, Shichao Pei
+                <br>
+                <em>arXiv 2026</em>
+                <br>
+                <span class="pub-desc">446 long-form clips for repetition counting; the best frontier model reaches only 42.1% exact accuracy. Fine-tuning on 1K counting samples transfers to general video understanding (MVBench, PerceptionTest, TVBench).</span>
+                <br>
+                <span class="pub-links">
+                    <a href="https://arxiv.org/abs/2604.23407">[Paper]</a>
+                    <a href="https://pushupbench.com/">[Website]</a>
+                    <a href="https://github.com/EvolvingLMMs-Lab/lmms-eval/pull/1262">[lmms-eval]</a>
+                </span>
+            </td>
+        </tr>
+
         <!-- IntelliAsk 2026 -->
         <tr>
 <td class="pub-text-td">
@@ -78,8 +165,8 @@
                 <span class="pub-desc">Trains a reward model on 15.5K+ ICLR review questions and uses RLVR to generate expert-quality peer review questions, outperforming GPT-5 and Gemini 2.5 Pro.</span>
                 <br>
                 <span class="pub-links">
-                    <a href="https://arxiv.org/abs/2602.15849">Paper</a>
-                    <a href="https://anonymousse123456.github.io/intelliask.github.io/">Project</a>
+                    <a href="https://arxiv.org/abs/2602.15849">[Paper]</a>
+                    <a href="https://anonymousse123456.github.io/intelliask.github.io/">[Project]</a>
                 </span>
             </td>
         </tr>
@@ -88,7 +175,7 @@
         <tr>
 <td class="pub-text-td">
                 <span class="pub-title">
-                    <a href="https://arxiv.org/abs/2402.10884">Multi-modal Preference Alignment Remedies Regression of Visual Instruction Tuning on Language Model</a>
+                    <a href="https://arxiv.org/abs/2402.10884">Multi-modal Preference Alignment Remedies Degradation of Visual Instruction Tuning on Language Models</a>
                 </span>
                 <br>
                 <strong>Shengzhi Li</strong>, Rongyu Lin, Shichao Pei
@@ -113,10 +200,11 @@
                 <br>
                 <strong>Shengzhi Li</strong>, Rongyu Lin, Kittipat Kampa, Bohang Li, Shichao Pei, Bo Han
                 <br>
-                <em>Under review at COLING 2025</em>
+                <em>arXiv 2024</em>
                 <br>
                 <span class="pub-links">
                     <a href="https://arxiv.org/abs/2411.05232">[Paper]</a>
+                    <a href="https://github.com/findalexli/Abstract2Appendix">[Data]</a>
                 </span>
             </td>
         </tr>
@@ -162,7 +250,7 @@
     <table class="experience-table">
         <tr>
             <td class="exp-org"><strong>Meta</strong></td>
-            <td class="exp-role">Research Engineer</td>
+            <td class="exp-role">Research Engineer, Muse Post-Training</td>
             <td class="exp-date">Jun 2025 &ndash; Present</td>
         </tr>
         <tr>
@@ -249,7 +337,7 @@
 
     <!-- ==================== Footer ==================== -->
     <footer>
-        <p>Template inspired by <a href="https://jonbarron.info/">Jon Barron</a>. &copy; 2025 Shengzhi Li.</p>
+        <p>Template inspired by <a href="https://jonbarron.info/">Jon Barron</a>. &copy; 2026 Shengzhi Li.</p>
     </footer>
 
 </div>
