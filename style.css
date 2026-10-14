@@ -9,7 +9,6 @@
   --accent: #1d5fa8;
   --accent-hover: #b4581c;
   --tag-bg: #f1eee6;
-  --feature-bg: #fbf3df;
   --thumb-bg: #ffffff;
   --tile-bg: #eef2f7;
   --tile-text: #3d5a80;
@@ -27,7 +26,6 @@
     --accent: #7fb2ec;
     --accent-hover: #f0a46a;
     --tag-bg: #26241f;
-    --feature-bg: #24211a;
     --thumb-bg: #f4f2ee;
     --tile-bg: #1f2833;
     --tile-text: #9cc0ea;
@@ -192,13 +190,6 @@ a.title:hover { color: var(--accent-hover); }
   padding: 14px 0;
 }
 
-.papers li.featured {
-  background: var(--feature-bg);
-  border-radius: 6px;
-  padding: 16px;
-  margin: 0 -16px 10px;
-}
-
 .thumb {
   flex: none;
   width: 200px;
@@ -271,5 +262,4 @@ footer {
   .papers li { flex-direction: column; gap: 10px; }
   .thumb { width: 100%; height: 170px; }
   .thumb.tile { height: 64px; }
-  .papers li.featured { margin: 0 -10px 10px; padding: 12px 10px; }
 }
