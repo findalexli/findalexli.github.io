@@ -26,10 +26,10 @@
             <h1>Shengzhi (Alex) Li</h1>
             <p class="role">Research Engineer &middot; Muse Post-Training &middot; Meta Superintelligence Labs</p>
             <p>
-                I work on post-training for <strong>Muse</strong> at <a href="https://ai.meta.com/">Meta</a>. Before that I worked on the <strong>Reka Flash</strong> models at <a href="https://reka.ai/">Reka AI</a>, LLMs for finance at <a href="https://tifin.com/">TIFIN</a>, and wearable neurostimulation at <a href="https://calahealth.com/">Cala Health</a>.
+                I work on post-training for <strong>Muse</strong> at <a href="https://ai.meta.com/">Meta</a>. Before that I helped post-train the <strong>Reka Flash</strong> models at <a href="https://reka.ai/">Reka AI</a>.
             </p>
             <p>
-                My research covers post-training, coding agents and how to evaluate them, AI systems that do and review science, and multimodal models.
+                I took the long way here: physics and applied math at Berkeley, four years building wearable neurostimulation for tremor at <a href="https://calahealth.com/">Cala Health</a> (three patents, a therapy now covered by Medicare), LLMs for finance at <a href="https://tifin.com/">TIFIN</a>, and then frontier models. Lately I spend most of my time on coding agents and on whether the numbers we use to judge them can be trusted.
             </p>
             <p class="links">
                 <a href="mailto:alex.shengzhi@gmail.com">Email</a>
@@ -88,67 +88,105 @@
         <h2>Research</h2>
         <p class="note">* equal contribution or project co-lead. Full list on <a href="https://scholar.google.com/citations?user=UBxhmfIAAAAJ&hl=en">Google Scholar</a>.</p>
 
-        <h3>Agents &amp; evaluation</h3>
-        <ul class="entries">
-            <li>
-                <a class="title" href="https://arxiv.org/abs/2606.29957">SWE-Together: Evaluating Coding Agents in Interactive User Sessions</a>
-                <div class="authors">Yifan Wu*, Zhuokai Zhao, Songlin Li, Ho Hin Lee, Jiacheng Zhu, Shirley Wu, Tianhe Yu, Serena Li, Lizhu Zhang, Xiangjun Fan, <b>Shengzhi Li*</b></div>
-                <div class="desc"><span class="venue">ICLR 2026 Workshop</span> Coding agents scored on real multi-turn user sessions, not one-shot prompts. <a href="https://arxiv.org/abs/2606.29957">paper</a> &middot; <a href="https://togetherbench.com">leaderboard</a> &middot; <a href="https://github.com/Togetherbench/SWE-Together">code</a> &middot; <a href="https://huggingface.co/datasets/yfwu/SWE-Together">data</a></div>
+        <h3>Highlights &middot; agents &amp; evaluation</h3>
+        <ul class="papers">
+            <li class="paper featured">
+                <a class="thumb" href="https://togetherbench.com"><img src="assets/figs/swe-together.jpg" alt="SWE-bench style one-shot evaluation versus SWE-Together multi-turn evaluation" loading="lazy"></a>
+                <div class="body">
+                    <a class="title" href="https://togetherbench.com">SWE-Together: Evaluating Coding Agents in Interactive User Sessions</a>
+                    <div class="authors">Yifan Wu*, Zhuokai Zhao, Songlin Li, Ho Hin Lee, Jiacheng Zhu, Shirley Wu, Tianhe Yu, Serena Li, Lizhu Zhang, Xiangjun Fan, <b>Shengzhi Li*</b></div>
+                    <div class="meta"><span class="venue">ICLR 2026 Workshop</span><a href="https://arxiv.org/abs/2606.29957">paper</a> &middot; <a href="https://togetherbench.com">leaderboard</a> &middot; <a href="https://github.com/Togetherbench/SWE-Together">code</a> &middot; <a href="https://huggingface.co/datasets/yfwu/SWE-Together">data</a></div>
+                    <p class="desc">Real users don't hand an agent a perfect spec; they clarify, change their minds and correct it. We rebuilt 109 tasks from 11,260 real coding sessions and replay them with a simulated user, scoring agents on whether they finish and on how often the user has to step in.</p>
+                </div>
             </li>
-            <li>
-                <a class="title" href="https://lishengzhi.com/edgebench-verified/">EdgeBench Verified: An Audit of the Graders Behind the 51 Public EdgeBench Tasks</a>
-                <div class="authors"><b>Shengzhi Li</b></div>
-                <div class="desc"><span class="venue">Report 2026</span> 32 of 51 hidden graders score some work wrongly; fixes for 31. <a href="https://lishengzhi.com/edgebench-verified/">site</a> &middot; <a href="https://lishengzhi.com/edgebench-verified/zh/index.html">中文</a> &middot; <a href="https://github.com/findalexli/edgebench-verified">code</a></div>
+            <li class="paper featured">
+                <a class="thumb" href="https://lishengzhi.com/edgebench-verified/"><img src="assets/figs/edgebench-verified.jpg" alt="The EdgeBench scoring pipeline and the four places where graders go wrong" loading="lazy"></a>
+                <div class="body">
+                    <a class="title" href="https://lishengzhi.com/edgebench-verified/">EdgeBench Verified: An Audit of the Graders Behind the 51 Public EdgeBench Tasks</a>
+                    <div class="authors"><b>Shengzhi Li</b></div>
+                    <div class="meta"><span class="venue">Report 2026</span><a href="https://lishengzhi.com/edgebench-verified/">site</a> &middot; <a href="https://lishengzhi.com/edgebench-verified/zh/index.html">中文</a> &middot; <a href="https://github.com/findalexli/edgebench-verified">code</a></div>
+                    <p class="desc">A benchmark is only as good as its grader. I tested every hidden grader in EdgeBench the way you would test any program. 32 of 51 score some submissions wrongly: correct work gets zero, broken work gets full marks. Fixes for 31 tasks are public.</p>
+                </div>
             </li>
         </ul>
 
         <h3>AI for science</h3>
-        <ul class="entries">
-            <li>
-                <a class="title" href="https://arxiv.org/abs/2609.14738">AppliedScientist: Automated Scientific Revision Through Iterative AI Reviewing</a>
-                <div class="authors">Vidushee Vats, Karun Sharma, <b>Shengzhi Li</b>, Shichao Pei</div>
-                <div class="desc"><span class="venue">arXiv 2026</span> An AI scientist revises rejected papers under an AI reviewer; it fixes experiments well, ideas rarely. <a href="https://arxiv.org/abs/2609.14738">paper</a> &middot; <a href="https://theappliedscientist.github.io/">project</a> &middot; <a href="https://github.com/TheAppliedScientist/TheAppliedScientist">code</a></div>
+        <ul class="papers">
+            <li class="paper">
+                <a class="thumb" href="https://theappliedscientist.github.io/"><img src="assets/figs/appliedscientist.jpg" alt="The AppliedScientist revision loop with an AI reviewer" loading="lazy"></a>
+                <div class="body">
+                    <a class="title" href="https://theappliedscientist.github.io/">AppliedScientist: Automated Scientific Revision Through Iterative AI Reviewing</a>
+                    <div class="authors">Vidushee Vats, Karun Sharma, <b>Shengzhi Li</b>, Shichao Pei</div>
+                    <div class="meta"><span class="venue">arXiv 2026</span><a href="https://arxiv.org/abs/2609.14738">paper</a> &middot; <a href="https://theappliedscientist.github.io/">project</a> &middot; <a href="https://github.com/TheAppliedScientist/TheAppliedScientist">code</a></div>
+                    <p class="desc">An AI scientist revises rejected papers while an AI reviewer keeps grading them. It fixes 85% of the experimental weaknesses but almost none of the weaknesses in the idea itself.</p>
+                </div>
             </li>
-            <li>
-                <a class="title" href="https://arxiv.org/abs/2602.15849">IntelliAsk: Learning to Ask High-Quality Research Questions via RLVR</a>
-                <div class="authors">Karun Sharma, Vidushee Vats, <b>Shengzhi Li</b>, Yuxiang Wang, Zhongtian Sun, Prayag Tiwari</div>
-                <div class="desc"><span class="venue">arXiv 2026</span> RL with a learned reward to ask reviewer-quality questions about papers. <a href="https://arxiv.org/abs/2602.15849">paper</a> &middot; <a href="https://anonymousse123456.github.io/intelliask.github.io/">project</a></div>
+            <li class="paper">
+                <div class="thumb tile"><span>Ask?</span></div>
+                <div class="body">
+                    <a class="title" href="https://arxiv.org/abs/2602.15849">IntelliAsk: Learning to Ask High-Quality Research Questions via RLVR</a>
+                    <div class="authors">Karun Sharma, Vidushee Vats, <b>Shengzhi Li</b>, Yuxiang Wang, Zhongtian Sun, Prayag Tiwari</div>
+                    <div class="meta"><span class="venue">arXiv 2026</span><a href="https://arxiv.org/abs/2602.15849">paper</a> &middot; <a href="https://anonymousse123456.github.io/intelliask.github.io/">project</a></div>
+                    <p class="desc">RL with a reward model trained on real ICLR review questions, so the model asks the questions a good reviewer would.</p>
+                </div>
             </li>
-            <li>
-                <a class="title" href="https://arxiv.org/abs/2411.05232">Abstract2Appendix: Academic Reviews Enhance LLM Long-Context Capabilities</a>
-                <div class="authors"><b>Shengzhi Li</b>, Rongyu Lin, Kittipat Kampa, Bohang Li, Shichao Pei, Bo Han</div>
-                <div class="desc"><span class="venue">arXiv 2024</span> Peer reviews as training data for long-context reading. <a href="https://arxiv.org/abs/2411.05232">paper</a> &middot; <a href="https://github.com/findalexli/Abstract2Appendix">data</a></div>
+            <li class="paper">
+                <div class="thumb tile"><span>A&rarr;Z</span></div>
+                <div class="body">
+                    <a class="title" href="https://arxiv.org/abs/2411.05232">Abstract2Appendix: Academic Reviews Enhance LLM Long-Context Capabilities</a>
+                    <div class="authors"><b>Shengzhi Li</b>, Rongyu Lin, Kittipat Kampa, Bohang Li, Shichao Pei, Bo Han</div>
+                    <div class="meta"><span class="venue">arXiv 2024</span><a href="https://arxiv.org/abs/2411.05232">paper</a> &middot; <a href="https://github.com/findalexli/Abstract2Appendix">data</a></div>
+                    <p class="desc">Peer reviews make good training data for reading whole papers, appendix included.</p>
+                </div>
             </li>
         </ul>
 
         <h3>Multimodal models</h3>
-        <ul class="entries">
-            <li>
-                <a class="title" href="https://arxiv.org/abs/2610.00757">Video Evidence Indexing: Learning Where to Look from Video Previews for Token-Budgeted Long-Video Question Answering</a>
-                <div class="authors">Haowen Guan, <b>Shengzhi Li</b>, Shichao Pei</div>
-                <div class="desc"><span class="venue">arXiv 2026</span> A cheap preview decides where to spend high-resolution frames. <a href="https://arxiv.org/abs/2610.00757">paper</a></div>
+        <ul class="papers">
+            <li class="paper">
+                <a class="thumb" href="https://pushupbench.com/"><img src="assets/figs/pushupbench.jpg" alt="A bench-press clip with the overlay 205 x 5 for 4" loading="lazy"></a>
+                <div class="body">
+                    <a class="title" href="https://pushupbench.com/">PushupBench: Your VLM is not good at counting pushups</a>
+                    <div class="authors"><b>Shengzhi Li</b>, Jiarun Chen, Karun Sharma, Jiaqi Su, Shichao Pei</div>
+                    <div class="meta"><span class="venue">arXiv 2026</span><a href="https://arxiv.org/abs/2604.23407">paper</a> &middot; <a href="https://pushupbench.com/">site</a> &middot; <a href="https://github.com/EvolvingLMMs-Lab/lmms-eval/pull/1262">lmms-eval</a></div>
+                    <p class="desc">VLMs can tell you what exercise you're doing but not how many reps. Counting turns out to be a good probe of temporal reasoning. (Pictured: a clip that prints the answer on screen. We edit those out.)</p>
+                </div>
             </li>
-            <li>
-                <a class="title" href="https://arxiv.org/abs/2604.23407">PushupBench: Your VLM is not good at counting pushups</a>
-                <div class="authors"><b>Shengzhi Li</b>, Jiarun Chen, Karun Sharma, Jiaqi Su, Shichao Pei</div>
-                <div class="desc"><span class="venue">arXiv 2026</span> Counting repetitions as a probe of temporal reasoning in VLMs. <a href="https://arxiv.org/abs/2604.23407">paper</a> &middot; <a href="https://pushupbench.com/">site</a> &middot; <a href="https://github.com/EvolvingLMMs-Lab/lmms-eval/pull/1262">lmms-eval</a></div>
+            <li class="paper">
+                <a class="thumb" href="https://arxiv.org/abs/2610.00757"><img src="assets/figs/vei.jpg" alt="Video Evidence Indexing pipeline" loading="lazy"></a>
+                <div class="body">
+                    <a class="title" href="https://arxiv.org/abs/2610.00757">Video Evidence Indexing: Learning Where to Look from Video Previews for Token-Budgeted Long-Video Question Answering</a>
+                    <div class="authors">Haowen Guan, <b>Shengzhi Li</b>, Shichao Pei</div>
+                    <div class="meta"><span class="venue">arXiv 2026</span><a href="https://arxiv.org/abs/2610.00757">paper</a></div>
+                    <p class="desc">Watch a cheap low-resolution preview first, then spend the high-resolution frame budget only where the answer is.</p>
+                </div>
             </li>
-            <li>
-                <a class="title" href="https://arxiv.org/abs/2402.10884">Multi-modal Preference Alignment Remedies Degradation of Visual Instruction Tuning on Language Models</a>
-                <div class="authors"><b>Shengzhi Li</b>, Rongyu Lin, Shichao Pei</div>
-                <div class="desc"><span class="venue">ACL 2024</span> Small-scale DPO restores the language skills lost in visual instruction tuning. <a href="https://arxiv.org/abs/2402.10884">paper</a> &middot; <a href="https://github.com/findalexli/mllm-dpo">code</a> &middot; <a href="https://huggingface.co/alexshengzhili/llava-v1.5-13b-dpo">model</a></div>
+            <li class="paper">
+                <a class="thumb" href="https://arxiv.org/abs/2402.10884"><img src="assets/figs/mllm-dpo.jpg" alt="Multi-modal DPO data pipeline" loading="lazy"></a>
+                <div class="body">
+                    <a class="title" href="https://arxiv.org/abs/2402.10884">Multi-modal Preference Alignment Remedies Degradation of Visual Instruction Tuning on Language Models</a>
+                    <div class="authors"><b>Shengzhi Li</b>, Rongyu Lin, Shichao Pei</div>
+                    <div class="meta"><span class="venue">ACL 2024</span><a href="https://arxiv.org/abs/2402.10884">paper</a> &middot; <a href="https://github.com/findalexli/mllm-dpo">code</a> &middot; <a href="https://huggingface.co/alexshengzhili/llava-v1.5-13b-dpo">model</a></div>
+                    <p class="desc">Teaching a language model to see makes it worse at language. A small round of DPO wins most of it back.</p>
+                </div>
             </li>
-            <li>
-                <a class="title" href="https://arxiv.org/abs/2308.03349">SciGraphQA: A Large-Scale Synthetic Multi-Turn Question-Answering Dataset for Scientific Graphs</a>
-                <div class="authors"><b>Shengzhi Li</b>, Nima Tajbakhsh</div>
-                <div class="desc"><span class="venue">arXiv 2023</span> 295K multi-turn QA dialogues about figures from arXiv papers. <a href="https://arxiv.org/abs/2308.03349">paper</a> &middot; <a href="https://huggingface.co/datasets/alexshengzhili/SciGraphQA-295K-train">data</a> &middot; <a href="https://github.com/findalexli/SciGraphQA">code</a></div>
-            </li>
-            <li>
-                <span class="title">Wavelet Guided Visual State Space Model and Patch Resampling Enhanced U-shaped Structure for Skin Lesion Segmentation</span>
-                <div class="authors">Shuangxi Feng, Xianglin Chen, <b>Shengzhi Li</b></div>
-                <div class="desc"><span class="venue">IEEE Access 2024</span></div>
+            <li class="paper">
+                <a class="thumb" href="https://arxiv.org/abs/2308.03349"><img src="assets/figs/scigraphqa.jpg" alt="How SciGraphQA dialogues are generated" loading="lazy"></a>
+                <div class="body">
+                    <a class="title" href="https://arxiv.org/abs/2308.03349">SciGraphQA: A Large-Scale Synthetic Multi-Turn Question-Answering Dataset for Scientific Graphs</a>
+                    <div class="authors"><b>Shengzhi Li</b>, Nima Tajbakhsh</div>
+                    <div class="meta"><span class="venue">arXiv 2023</span><a href="https://arxiv.org/abs/2308.03349">paper</a> &middot; <a href="https://huggingface.co/datasets/alexshengzhili/SciGraphQA-295K-train">data</a> &middot; <a href="https://github.com/findalexli/SciGraphQA">code</a></div>
+                    <p class="desc">295K multi-turn conversations about figures in arXiv papers, generated with the paper's own text as context.</p>
+                </div>
             </li>
         </ul>
+
+        <details class="more">
+            <summary>Also</summary>
+            <ul class="compact">
+                <li>Wavelet Guided Visual State Space Model and Patch Resampling Enhanced U-shaped Structure for Skin Lesion Segmentation. Shuangxi Feng, Xianglin Chen, <b>Shengzhi Li</b>. <i>IEEE Access 2024</i>.</li>
+            </ul>
+        </details>
     </section>
 
     <!-- ==================== Projects ==================== -->
