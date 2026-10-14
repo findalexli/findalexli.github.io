@@ -86,98 +86,196 @@
     <!-- ==================== Research ==================== -->
     <section>
         <h2>Research</h2>
-        <p class="note">* equal contribution or project co-lead. Full list on <a href="https://scholar.google.com/citations?user=UBxhmfIAAAAJ&hl=en">Google Scholar</a>.</p>
+        <p class="note">Click a figure for the full story. * equal contribution or project co-lead. Full list on <a href="https://scholar.google.com/citations?user=UBxhmfIAAAAJ&hl=en">Google Scholar</a>.</p>
 
         <h3>Agents &amp; evaluation</h3>
         <ul class="papers">
-            <li class="paper">
-                <a class="thumb" href="https://togetherbench.com"><img src="assets/figs/swe-together.jpg" alt="SWE-bench style one-shot evaluation versus SWE-Together multi-turn evaluation" loading="lazy"></a>
+            <li>
+                <a class="thumb" href="assets/figs/full/swe-together.jpg" data-fig="swe-together" aria-label="Open figure: One-shot SWE-bench evaluation compared with multi-turn SWE-Together evaluation"><img src="assets/figs/swe-together.jpg" alt="One-shot SWE-bench evaluation compared with multi-turn SWE-Together evaluation" loading="lazy"></a>
                 <div class="body">
                     <a class="title" href="https://togetherbench.com">SWE-Together: Evaluating Coding Agents in Interactive User Sessions</a>
                     <div class="authors">Yifan Wu*, Zhuokai Zhao, Songlin Li, Ho Hin Lee, Jiacheng Zhu, Shirley Wu, Tianhe Yu, Serena Li, Lizhu Zhang, Xiangjun Fan, <b>Shengzhi Li*</b></div>
                     <div class="meta"><span class="venue">ICLR 2026 Workshop</span><a href="https://arxiv.org/abs/2606.29957">paper</a> &middot; <a href="https://togetherbench.com">leaderboard</a> &middot; <a href="https://github.com/Togetherbench/SWE-Together">code</a> &middot; <a href="https://huggingface.co/datasets/yfwu/SWE-Together">data</a></div>
-                    <p class="desc">Real users don't hand an agent a perfect spec; they clarify, change their minds and correct it. We rebuilt 109 tasks from 11,260 real coding sessions and replay them with a simulated user, scoring agents on whether they finish and on how often the user has to step in.</p>
+                    <p class="desc">Real users don't hand an agent a perfect spec. They clarify, change their minds and correct it. We score agents on real sessions like that.</p>
                 </div>
+                <template id="fig-swe-together">
+                    <img src="assets/figs/full/swe-together.jpg" alt="One-shot SWE-bench evaluation compared with multi-turn SWE-Together evaluation">
+                    <div class="cap">
+                        <p class="cap-title">SWE-Together</p>
+                        <p><b>The question.</b> Coding benchmarks like SWE-bench give an agent one complete task description and grade only the final code. Real coding help is a conversation: users clarify goals, add constraints and correct mistakes over many turns.</p>
+                        <p><b>The figure.</b> Top: the usual one-shot setup and its pass rates. Bottom: SWE-Together, where the same agents are replayed through a real multi-turn session. Bars are pass rates; the overlaid line is how many times, on average, the user had to step in and correct the agent.</p>
+                        <p><b>How it works.</b> We curated 109 repository-level tasks from 11,260 recorded user&ndash;agent sessions, keeping only sessions with a recoverable repository state, a clear goal and an observable outcome. A reactive LLM user simulator keeps the original user's intent and gives feedback only when the agent's progress calls for it.</p>
+                        <p><b>What we found.</b> Stronger agents both finish more tasks and need fewer corrections (Pearson &minus;0.92 between pass@1 and corrections per trial), so a better model is also a less tiring collaborator.</p>
+                        <p class="cap-links"><a href="https://arxiv.org/abs/2606.29957">paper</a> &middot; <a href="https://togetherbench.com">leaderboard</a> &middot; <a href="https://github.com/Togetherbench/SWE-Together">code</a> &middot; <a href="https://huggingface.co/datasets/yfwu/SWE-Together">data</a></p>
+                    </div>
+                </template>
             </li>
-            <li class="paper">
-                <a class="thumb" href="https://lishengzhi.com/edgebench-verified/"><img src="assets/figs/edgebench-verified.jpg" alt="The EdgeBench scoring pipeline and the four places where graders go wrong" loading="lazy"></a>
+            <li>
+                <a class="thumb" href="assets/figs/full/edgebench-verified.jpg" data-fig="edgebench-verified" aria-label="Open figure: The EdgeBench scoring pipeline and the four places where graders go wrong"><img src="assets/figs/edgebench-verified.jpg" alt="The EdgeBench scoring pipeline and the four places where graders go wrong" loading="lazy"></a>
                 <div class="body">
                     <a class="title" href="https://lishengzhi.com/edgebench-verified/">EdgeBench Verified: An Audit of the Graders Behind the 51 Public EdgeBench Tasks</a>
                     <div class="authors"><b>Shengzhi Li</b></div>
                     <div class="meta"><span class="venue">Report 2026</span><a href="https://lishengzhi.com/edgebench-verified/">site</a> &middot; <a href="https://lishengzhi.com/edgebench-verified/zh/index.html">中文</a> &middot; <a href="https://github.com/findalexli/edgebench-verified">code</a></div>
-                    <p class="desc">A benchmark is only as good as its grader. I tested every hidden grader in EdgeBench the way you would test any program. 32 of 51 score some submissions wrongly: correct work gets zero, broken work gets full marks. Fixes for 31 tasks are public.</p>
+                    <p class="desc">A benchmark is only as good as its grader. I tested every hidden grader in EdgeBench the way you would test any program.</p>
                 </div>
+                <template id="fig-edgebench-verified">
+                    <img src="assets/figs/full/edgebench-verified.jpg" alt="The EdgeBench scoring pipeline and the four places where graders go wrong">
+                    <div class="cap">
+                        <p class="cap-title">EdgeBench Verified</p>
+                        <p><b>The question.</b> EdgeBench ranks AI agents on 51 public engineering and science tasks. An agent works for hours and a hidden grader program turns its submission into a score from 0 to 100. Nobody checks the graders.</p>
+                        <p><b>The figure.</b> How a submission becomes a leaderboard number: the grader produces a raw result, which is mapped to 0&ndash;100, the best score of each run is kept, and runs and tasks are averaged. The red markers are the four places we found it going wrong: (1) accepting wrong work, (2) rejecting correct work or enforcing an unstated rule, (3) a score scale that is unreachable or mismeasured, (4) keeping the wrong submission.</p>
+                        <p><b>How it works.</b> Each grader is fed correct work, broken work and work that follows the instructions to the letter. Fixed graders are checked side by side against the originals on the same submissions, and against a public agent run where one exists.</p>
+                        <p><b>What we found.</b> 32 of 51 graders score some submissions wrongly: correct solutions get zero, broken programs get full credit, and on one task no submission can exceed 21/100. Fixes are published for 31 tasks and 1 task is removed. Regrading one real run moves a score from 3.8 to 41.2, and the order of the top two leaderboard entries can no longer be confirmed.</p>
+                        <p class="cap-links"><a href="https://lishengzhi.com/edgebench-verified/">site</a> &middot; <a href="https://lishengzhi.com/edgebench-verified/zh/index.html">中文</a> &middot; <a href="https://github.com/findalexli/edgebench-verified">code</a></p>
+                    </div>
+                </template>
             </li>
         </ul>
 
         <h3>AI for science</h3>
         <ul class="papers">
-            <li class="paper">
-                <a class="thumb" href="https://theappliedscientist.github.io/"><img src="assets/figs/appliedscientist.jpg" alt="The AppliedScientist revision loop with an AI reviewer" loading="lazy"></a>
+            <li>
+                <a class="thumb" href="assets/figs/full/appliedscientist.jpg" data-fig="appliedscientist" aria-label="Open figure: The AppliedScientist revision loop with an AI reviewer"><img src="assets/figs/appliedscientist.jpg" alt="The AppliedScientist revision loop with an AI reviewer" loading="lazy"></a>
                 <div class="body">
                     <a class="title" href="https://theappliedscientist.github.io/">AppliedScientist: Automated Scientific Revision Through Iterative AI Reviewing</a>
                     <div class="authors">Vidushee Vats, Karun Sharma, <b>Shengzhi Li</b>, Shichao Pei</div>
                     <div class="meta"><span class="venue">arXiv 2026</span><a href="https://arxiv.org/abs/2609.14738">paper</a> &middot; <a href="https://theappliedscientist.github.io/">project</a> &middot; <a href="https://github.com/TheAppliedScientist/TheAppliedScientist">code</a></div>
-                    <p class="desc">An AI scientist revises rejected papers while an AI reviewer keeps grading them. It fixes 85% of the experimental weaknesses but almost none of the weaknesses in the idea itself.</p>
+                    <p class="desc">An AI scientist revises rejected papers while an AI reviewer keeps grading them. It fixes experiments well and ideas rarely.</p>
                 </div>
+                <template id="fig-appliedscientist">
+                    <img src="assets/figs/full/appliedscientist.jpg" alt="The AppliedScientist revision loop with an AI reviewer">
+                    <div class="cap">
+                        <p class="cap-title">AppliedScientist</p>
+                        <p><b>The question.</b> AI reviewers are usually judged on how good their reviews look. But a review only matters if acting on it makes the paper better. Can we measure that directly?</p>
+                        <p><b>The figure.</b> Left: the AI scientist checks each reviewer suggestion, runs new experiments, analyzes the results and rewrites the manuscript. Right: the AI reviewer reads each revision from scratch, searches the literature and returns structured feedback for the next round. The reviewer keeps no memory of earlier rounds, so its scores are not anchored by its own past judgments.</p>
+                        <p><b>How it works.</b> 30 ICLR papers (25 rejected, 5 borderline accepted) go through five rounds of revision, starting from the real venue reviews, from AI reviews, or from a fixed self-revision prompt. An independent reviewer that never guides the scientist scores the same papers as a check.</p>
+                        <p><b>What we found.</b> Reviewer-guided revision beats self-revision. Scores rise from 5.37 to 6.53 under our reviewer and from 5.50 to 6.15 under the independent one. The system resolves 128 of 150 execution weaknesses (85%) but only 2 of 18 idea weaknesses: revision can fix the experiments, not the idea.</p>
+                        <p class="cap-links"><a href="https://arxiv.org/abs/2609.14738">paper</a> &middot; <a href="https://theappliedscientist.github.io/">project</a> &middot; <a href="https://github.com/TheAppliedScientist/TheAppliedScientist">code</a></p>
+                    </div>
+                </template>
             </li>
-            <li class="paper">
-                <div class="thumb tile"><span>Ask?</span></div>
+            <li>
+                <a class="thumb" href="assets/figs/full/intelliask.jpg" data-fig="intelliask" aria-label="Open figure: Pairwise human preference for IntelliAsk-32B over other models"><img src="assets/figs/intelliask.jpg" alt="Pairwise human preference for IntelliAsk-32B over other models" loading="lazy"></a>
                 <div class="body">
                     <a class="title" href="https://arxiv.org/abs/2602.15849">IntelliAsk: Learning to Ask High-Quality Research Questions via RLVR</a>
                     <div class="authors">Karun Sharma, Vidushee Vats, <b>Shengzhi Li</b>, Yuxiang Wang, Zhongtian Sun, Prayag Tiwari</div>
                     <div class="meta"><span class="venue">arXiv 2026</span><a href="https://arxiv.org/abs/2602.15849">paper</a> &middot; <a href="https://anonymousse123456.github.io/intelliask.github.io/">project</a></div>
-                    <p class="desc">RL with a reward model trained on real ICLR review questions, so the model asks the questions a good reviewer would.</p>
+                    <p class="desc">Teaching a model to ask the questions a careful reviewer would ask, not surface-level ones.</p>
                 </div>
+                <template id="fig-intelliask">
+                    <img src="assets/figs/full/intelliask.jpg" alt="Pairwise human preference for IntelliAsk-32B over other models">
+                    <div class="cap">
+                        <p class="cap-title">IntelliAsk</p>
+                        <p><b>The question.</b> Good peer review rests on substantive, evidence-based questions. LLMs tend to ask surface-level ones, often about the first page only, and experts rate them below human reviewers' questions.</p>
+                        <p><b>The figure.</b> Expert annotators compare questions about the same paper from IntelliAsk-32B and from another model. IntelliAsk is preferred 81% of the time over Gemini 2.5 Flash, 85% over GPT-4.1 and 96% over Qwen3-32B.</p>
+                        <p><b>How it works.</b> We curated reviewer questions from OpenReview and had experts rate question&ndash;paper pairs for effort, evidence and grounding. Those ratings train IntelliReward, a reward model on top of a frozen LLM, which then drives RL (DAPO) to train IntelliAsk.</p>
+                        <p><b>What we found.</b> Besides better questions, the training transfers: compared with Qwen3-32B, IntelliAsk improves on MuSR (68.3 vs 64.7) and WritingBench (8.31 vs 8.07), which suggests asking good questions is tied to broader reasoning and writing ability.</p>
+                        <p class="cap-links"><a href="https://arxiv.org/abs/2602.15849">paper</a> &middot; <a href="https://anonymousse123456.github.io/intelliask.github.io/">project</a></p>
+                    </div>
+                </template>
             </li>
-            <li class="paper">
-                <div class="thumb tile"><span>A&rarr;Z</span></div>
+            <li>
+                <a class="thumb" href="assets/figs/full/abstract2appendix.jpg" data-fig="abstract2appendix" aria-label="Open figure: Token-count distribution of paper plus review pairs"><img src="assets/figs/abstract2appendix.jpg" alt="Token-count distribution of paper plus review pairs" loading="lazy"></a>
                 <div class="body">
                     <a class="title" href="https://arxiv.org/abs/2411.05232">Abstract2Appendix: Academic Reviews Enhance LLM Long-Context Capabilities</a>
                     <div class="authors"><b>Shengzhi Li</b>, Rongyu Lin, Kittipat Kampa, Bohang Li, Shichao Pei, Bo Han</div>
                     <div class="meta"><span class="venue">arXiv 2024</span><a href="https://arxiv.org/abs/2411.05232">paper</a> &middot; <a href="https://github.com/findalexli/Abstract2Appendix">data</a></div>
                     <p class="desc">Peer reviews make good training data for reading whole papers, appendix included.</p>
                 </div>
+                <template id="fig-abstract2appendix">
+                    <img src="assets/figs/full/abstract2appendix.jpg" alt="Token-count distribution of paper plus review pairs">
+                    <div class="cap">
+                        <p class="cap-title">Abstract2Appendix</p>
+                        <p><b>The question.</b> LLMs still struggle to read and reason over long documents. Peer reviews are written by experts who read the whole paper, appendix included. Are they good training data for long-context reading?</p>
+                        <p><b>The figure.</b> Length of each paper-plus-review training example, in tokens (n = 2,005). The average is about 26K tokens, so every example forces the model to use a long context. Examples over 33K tokens are filtered out.</p>
+                        <p><b>How it works.</b> We fine-tune on paper&ndash;review pairs built from aggregated human reviews and compare DPO against plain supervised fine-tuning.</p>
+                        <p><b>What we found.</b> DPO is better and more data-efficient. With only 2,000 samples it gains 4.04 points over Phi-3 and 2.6% on the Qasper benchmark. In zero-shot comparisons, aggregated human reviews are strongly preferred even over GPT-4o's.</p>
+                        <p class="cap-links"><a href="https://arxiv.org/abs/2411.05232">paper</a> &middot; <a href="https://github.com/findalexli/Abstract2Appendix">data</a></p>
+                    </div>
+                </template>
             </li>
         </ul>
 
         <h3>Multimodal models</h3>
         <ul class="papers">
-            <li class="paper">
-                <a class="thumb" href="https://pushupbench.com/"><img src="assets/figs/pushupbench.jpg" alt="A bench-press clip with the overlay 205 x 5 for 4" loading="lazy"></a>
+            <li>
+                <a class="thumb" href="assets/figs/full/pushupbench.jpg" data-fig="pushupbench" aria-label="Open figure: Predicted versus true repetition counts for four models"><img src="assets/figs/pushupbench.jpg" alt="Predicted versus true repetition counts for four models" loading="lazy"></a>
                 <div class="body">
                     <a class="title" href="https://pushupbench.com/">PushupBench: Your VLM is not good at counting pushups</a>
                     <div class="authors"><b>Shengzhi Li</b>, Jiarun Chen, Karun Sharma, Jiaqi Su, Shichao Pei</div>
                     <div class="meta"><span class="venue">arXiv 2026</span><a href="https://arxiv.org/abs/2604.23407">paper</a> &middot; <a href="https://pushupbench.com/">site</a> &middot; <a href="https://github.com/EvolvingLMMs-Lab/lmms-eval/pull/1262">lmms-eval</a></div>
-                    <p class="desc">VLMs can tell you what exercise you're doing but not how many reps. Counting turns out to be a good probe of temporal reasoning. (Pictured: a clip that prints the answer on screen. We edit those out.)</p>
+                    <p class="desc">VLMs can tell what exercise you're doing but not how many reps. Counting turns out to be a good probe of temporal reasoning.</p>
                 </div>
+                <template id="fig-pushupbench">
+                    <img src="assets/figs/full/pushupbench.jpg" alt="Predicted versus true repetition counts for four models">
+                    <div class="cap">
+                        <p class="cap-title">PushupBench</p>
+                        <p><b>The question.</b> Vision-language models recognize <i>what</i> happens in a video but often can't count <i>how many</i> times it happens. PushupBench has 446 long workout clips (36.7 s on average) for testing repetition counting.</p>
+                        <p><b>The figure.</b> Each dot is one clip: predicted count against the true count, with the diagonal marking a perfect answer. Gemini 3 Flash tracks the diagonal (R&sup2; = 0.82). The base Qwen3-VL-4B-Thinking model collapses to a few constant guesses such as 10, the most common count, giving R&sup2; = &minus;0.34. Our DAPO fine-tune spreads its predictions back out.</p>
+                        <p><b>What we found.</b> The best frontier model gets only 42.1% of counts exactly right and open 4B models about 6%. Accuracy alone misleads, because weak models score points by guessing the most common count. Fine-tuning on about 1K counting samples also improves general video benchmarks (MVBench +2.15, PerceptionTest +1.88, TVBench +4.54), which suggests counting is a proxy for temporal reasoning. PushupBench is part of lmms-eval.</p>
+                        <p class="cap-links"><a href="https://arxiv.org/abs/2604.23407">paper</a> &middot; <a href="https://pushupbench.com/">site</a> &middot; <a href="https://github.com/EvolvingLMMs-Lab/lmms-eval/pull/1262">lmms-eval</a></p>
+                    </div>
+                </template>
             </li>
-            <li class="paper">
-                <a class="thumb" href="https://arxiv.org/abs/2610.00757"><img src="assets/figs/vei.jpg" alt="Video Evidence Indexing pipeline" loading="lazy"></a>
+            <li>
+                <a class="thumb" href="assets/figs/full/vei.jpg" data-fig="vei" aria-label="Open figure: Video Evidence Indexing pipeline"><img src="assets/figs/vei.jpg" alt="Video Evidence Indexing pipeline" loading="lazy"></a>
                 <div class="body">
                     <a class="title" href="https://arxiv.org/abs/2610.00757">Video Evidence Indexing: Learning Where to Look from Video Previews for Token-Budgeted Long-Video Question Answering</a>
                     <div class="authors">Haowen Guan, <b>Shengzhi Li</b>, Shichao Pei</div>
                     <div class="meta"><span class="venue">arXiv 2026</span><a href="https://arxiv.org/abs/2610.00757">paper</a></div>
                     <p class="desc">Watch a cheap low-resolution preview first, then spend the high-resolution frame budget only where the answer is.</p>
                 </div>
+                <template id="fig-vei">
+                    <img src="assets/figs/full/vei.jpg" alt="Video Evidence Indexing pipeline">
+                    <div class="cap">
+                        <p class="cap-title">Video Evidence Indexing</p>
+                        <p><b>The question.</b> Long-video QA is limited by the cost of visual tokens and by a VLM's fixed context. A question may need the whole video for coverage, but its answer usually rests on a few moments.</p>
+                        <p><b>The figure.</b> (1) A dense, low-resolution video preview gives cheap coverage of the whole video. (2) Video Evidence Indexing reads the preview and decides which moments matter and how to split a fixed high-resolution frame budget among them. (3) Those frames form a compact evidence set. (4) The model answers using both the preview and the evidence.</p>
+                        <p><b>How it works.</b> There are no frame-level labels saying where the evidence is, so we use privileged self-distillation: a teacher that knows the answer guides the normal indexing policy on the student's own traces. One policy supports previews at 1, 6, 12 and 24 visual tokens per frame.</p>
+                        <p><b>What we found.</b> Indexing improves accuracy under tight visual budgets, and self-distillation improves both QA accuracy and how well the selected frames cover the true evidence.</p>
+                        <p class="cap-links"><a href="https://arxiv.org/abs/2610.00757">paper</a></p>
+                    </div>
+                </template>
             </li>
-            <li class="paper">
-                <a class="thumb" href="https://arxiv.org/abs/2402.10884"><img src="assets/figs/mllm-dpo.jpg" alt="Multi-modal DPO data pipeline" loading="lazy"></a>
+            <li>
+                <a class="thumb" href="assets/figs/full/mllm-dpo.jpg" data-fig="mllm-dpo" aria-label="Open figure: MT-Bench score as the share of DPO data grows"><img src="assets/figs/mllm-dpo.jpg" alt="MT-Bench score as the share of DPO data grows" loading="lazy"></a>
                 <div class="body">
                     <a class="title" href="https://arxiv.org/abs/2402.10884">Multi-modal Preference Alignment Remedies Degradation of Visual Instruction Tuning on Language Models</a>
                     <div class="authors"><b>Shengzhi Li</b>, Rongyu Lin, Shichao Pei</div>
                     <div class="meta"><span class="venue">ACL 2024</span><a href="https://arxiv.org/abs/2402.10884">paper</a> &middot; <a href="https://github.com/findalexli/mllm-dpo">code</a> &middot; <a href="https://huggingface.co/alexshengzhili/llava-v1.5-13b-dpo">model</a></div>
-                    <p class="desc">Teaching a language model to see makes it worse at language. A small round of DPO wins most of it back.</p>
+                    <p class="desc">Teaching a language model to see makes it worse at language. A small round of DPO wins it back.</p>
                 </div>
+                <template id="fig-mllm-dpo">
+                    <img src="assets/figs/full/mllm-dpo.jpg" alt="MT-Bench score as the share of DPO data grows">
+                    <div class="cap">
+                        <p class="cap-title">Multi-modal Preference Alignment Remedies Degradation of Visual Instruction Tuning on Language Models</p>
+                        <p><b>The question.</b> Multimodal LLMs are built by visual instruction tuning a language model on VQA data. VQA data is far less diverse than the text data the language model was trained on, so the model gets worse at following plain text instructions.</p>
+                        <p><b>The figure.</b> MT-Bench (text-only instruction following) as we train on more of our preference data. The dashed lines mark the Vicuna base language model and LLaVA-1.5-13B after visual instruction tuning. With DPO the score climbs steadily past both.</p>
+                        <p><b>How it works.</b> We sample four answers per image&ndash;question prompt, have Gemini rate them on five quality dimensions, and build a 5K-sample preference set. We compare SFT, rejection sampling, SteerLM and DPO on it.</p>
+                        <p><b>What we found.</b> DPO works best, reaching 6.73 on MT-Bench versus 6.57 for Vicuna and 5.99 for LLaVA. Restoring language ability also improves visual instruction following (+4.9% on MM-Vet, +6% on LLaVA-Bench) at little cost on visual-knowledge benchmarks, with 5K samples instead of the 80K+ used before.</p>
+                        <p class="cap-links"><a href="https://arxiv.org/abs/2402.10884">paper</a> &middot; <a href="https://github.com/findalexli/mllm-dpo">code</a> &middot; <a href="https://huggingface.co/alexshengzhili/llava-v1.5-13b-dpo">model</a></p>
+                    </div>
+                </template>
             </li>
-            <li class="paper">
-                <a class="thumb" href="https://arxiv.org/abs/2308.03349"><img src="assets/figs/scigraphqa.jpg" alt="How SciGraphQA dialogues are generated" loading="lazy"></a>
+            <li>
+                <a class="thumb" href="assets/figs/full/scigraphqa.jpg" data-fig="scigraphqa" aria-label="Open figure: How SciGraphQA dialogues are generated from an arXiv paper"><img src="assets/figs/scigraphqa.jpg" alt="How SciGraphQA dialogues are generated from an arXiv paper" loading="lazy"></a>
                 <div class="body">
                     <a class="title" href="https://arxiv.org/abs/2308.03349">SciGraphQA: A Large-Scale Synthetic Multi-Turn Question-Answering Dataset for Scientific Graphs</a>
                     <div class="authors"><b>Shengzhi Li</b>, Nima Tajbakhsh</div>
                     <div class="meta"><span class="venue">arXiv 2023</span><a href="https://arxiv.org/abs/2308.03349">paper</a> &middot; <a href="https://huggingface.co/datasets/alexshengzhili/SciGraphQA-295K-train">data</a> &middot; <a href="https://github.com/findalexli/SciGraphQA">code</a></div>
                     <p class="desc">295K multi-turn conversations about figures in arXiv papers, generated with the paper's own text as context.</p>
                 </div>
+                <template id="fig-scigraphqa">
+                    <img src="assets/figs/full/scigraphqa.jpg" alt="How SciGraphQA dialogues are generated from an arXiv paper">
+                    <div class="cap">
+                        <p class="cap-title">SciGraphQA</p>
+                        <p><b>The question.</b> Chart question-answering datasets were small and mostly synthetic. Real scientific figures come with rich context (the title, the abstract, the paragraph that discusses them) that can be used to ask much better questions.</p>
+                        <p><b>The figure.</b> Top: one arXiv paper with the parts we use highlighted: title, abstract, the paragraph mentioning the figure, the caption and OCR text from the figure itself. Middle: that context goes into a text-only Palm-2 prompt with two in-context examples. Bottom: the resulting multi-turn conversation about the figure.</p>
+                        <p><b>Scale.</b> 295K dialogues about figures from 290K CS/ML arXiv papers (2010&ndash;2020), averaging 2.23 question&ndash;answer turns. That is 13&times; larger than ChartVQA, and GPT-4 rates the answers 8.7/10 for consistency with the paper.</p>
+                        <p><b>What we found.</b> Zero-shot MLLMs do poorly; the best, LLaVA-13B, reaches CIDEr 0.08. Adding tables extracted from the figure with DePlot lifts it to 0.15, and fine-tuning on SciGraphQA reaches 0.26.</p>
+                        <p class="cap-links"><a href="https://arxiv.org/abs/2308.03349">paper</a> &middot; <a href="https://huggingface.co/datasets/alexshengzhili/SciGraphQA-295K-train">data</a> &middot; <a href="https://github.com/findalexli/SciGraphQA">code</a></p>
+                    </div>
+                </template>
             </li>
         </ul>
 
@@ -242,6 +340,31 @@
     </footer>
 
 </main>
+
+<dialog id="figbox" aria-label="Figure">
+    <button class="close" type="button" aria-label="Close">&times;</button>
+    <div class="figbox-inner"></div>
+</dialog>
+
+<script>
+(function () {
+  var box = document.getElementById('figbox');
+  if (!box || typeof box.showModal !== 'function') return;
+  var inner = box.querySelector('.figbox-inner');
+  document.querySelectorAll('a.thumb[data-fig]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var t = document.getElementById('fig-' + a.dataset.fig);
+      if (!t) return;
+      e.preventDefault();
+      inner.replaceChildren(t.content.cloneNode(true));
+      box.showModal();
+      box.scrollTop = 0;
+    });
+  });
+  box.querySelector('.close').addEventListener('click', function () { box.close(); });
+  box.addEventListener('click', function (e) { if (e.target === box) box.close(); });
+})();
+</script>
 
 </body>
 </html>

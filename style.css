@@ -10,8 +10,6 @@
   --accent-hover: #b4581c;
   --tag-bg: #f1eee6;
   --thumb-bg: #ffffff;
-  --tile-bg: #eef2f7;
-  --tile-text: #3d5a80;
   --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
   --sans: 'Inter', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
 }
@@ -27,8 +25,6 @@
     --accent-hover: #f0a46a;
     --tag-bg: #26241f;
     --thumb-bg: #f4f2ee;
-    --tile-bg: #1f2833;
-    --tile-text: #9cc0ea;
   }
 }
 
@@ -206,15 +202,93 @@ a.title:hover { color: var(--accent-hover); }
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  transition: transform 0.2s ease;
 }
 
-.thumb.tile {
-  background: var(--tile-bg);
-  color: var(--tile-text);
-  font-family: var(--serif);
-  font-size: 1.9rem;
-  font-style: italic;
+a.thumb { position: relative; cursor: zoom-in; border: 1px solid var(--rule); }
+a.thumb:hover img { transform: scale(1.04); }
+a.thumb::after {
+  content: "\2922";
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+  background: rgba(20, 20, 20, 0.55);
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
+a.thumb:hover::after, a.thumb:focus-visible::after { opacity: 1; }
+
+/* ---------- Figure dialog ---------- */
+dialog#figbox {
+  width: min(980px, calc(100vw - 32px));
+  max-height: calc(100vh - 48px);
+  margin: auto;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  overflow-y: auto;
+}
+dialog#figbox::backdrop { background: rgba(15, 14, 12, 0.6); }
+.figbox-inner > img {
+  width: 100%;
+  background: #fff;
+  padding: 16px;
+  border-bottom: 1px solid var(--rule);
+}
+.cap { padding: 20px 28px 26px; font-size: 0.95rem; line-height: 1.65; }
+.cap p { margin-bottom: 10px; }
+.cap b { font-weight: 600; }
+.cap-title {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+.cap-links { font-size: 0.9rem; margin-top: 14px; }
+
+@media (min-width: 900px) {
+  dialog#figbox { width: min(1240px, calc(100vw - 48px)); overflow: hidden; }
+  .figbox-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(300px, 1fr);
+    max-height: calc(100vh - 48px);
+  }
+  .figbox-inner > img {
+    height: 100%;
+    max-height: calc(100vh - 48px);
+    object-fit: contain;
+    border-bottom: none;
+    border-right: 1px solid var(--rule);
+  }
+  .cap { overflow-y: auto; max-height: calc(100vh - 48px); padding: 28px 30px; }
+  dialog#figbox .close { position: absolute; top: 10px; right: 10px; margin: 0; float: none; }
+}
+dialog#figbox .close {
+  position: sticky;
+  top: 8px;
+  float: right;
+  margin: 8px 8px -44px 0;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(20, 20, 20, 0.6);
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1;
+}
+dialog#figbox .close:hover { background: rgba(20, 20, 20, 0.85); }
 
 .papers .body { flex: 1; min-width: 0; }
 .papers .meta { font-size: 0.85rem; margin-top: 3px; }
@@ -261,5 +335,6 @@ footer {
   .what { flex-basis: 100%; order: 3; }
   .papers li { flex-direction: column; gap: 10px; }
   .thumb { width: 100%; height: 170px; }
-  .thumb.tile { height: 64px; }
+  .cap { padding: 16px 16px 20px; }
+  .figbox-inner > img { padding: 8px; }
 }
