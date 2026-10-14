@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Shengzhi (Alex) Li - Research Engineer at Meta on Muse post-training. Research on LLM post-training, coding agents, AI for science, and multi-modal LLMs.">
-    <meta name="keywords" content="Shengzhi Li, Alex Li, Meta, Muse, Post-training, SWE-Together, Coding Agents, AppliedScientist, Reka AI, LLM, Multi-modal, Alignment, ACL 2024, SciGraphQA">
+    <meta name="keywords" content="Shengzhi Li, Alex Li, Meta, Muse, Post-training, SWE-Together, EdgeBench Verified, Coding Agents, AppliedScientist, Reka AI, LLM, Multi-modal, Alignment, ACL 2024, SciGraphQA">
     <meta name="author" content="Shengzhi Li">
     <meta property="og:title" content="Shengzhi (Alex) Li - Research Engineer at Meta">
     <meta property="og:description" content="Research Engineer at Meta on Muse post-training. Research on LLM post-training, coding agents, AI for science, and multi-modal LLMs.">
@@ -27,7 +27,7 @@
             <td class="profile-text-td">
                 <h1>Shengzhi (Alex) Li</h1>
                 <p>
-                    I am a Research Engineer at <a href="https://ai.meta.com/">Meta</a>, working on <strong>Muse post-training</strong>. Recently I co-led <a href="https://togetherbench.com">SWE-Together</a>, a benchmark that evaluates coding agents in interactive, multi-turn sessions with real users. Previously, I was at <a href="https://reka.ai/">Reka AI</a> (contributing to Reka-flash-3), <a href="https://tifin.com/">TIFIN</a> (JPMorgan-backed fintech), and <a href="https://calahealth.com/">Cala Health</a> (3 patents on neurostimulation devices, now Medicare-covered). My research focuses on LLM post-training and evaluation, coding agents, AI for scientific research, and multi-modal LLMs.
+                    I am a Research Engineer at <a href="https://ai.meta.com/">Meta</a>, working on <strong>Muse post-training</strong>. Recently I co-led <a href="https://togetherbench.com">SWE-Together</a>, a benchmark that evaluates coding agents in interactive, multi-turn sessions with real users, and released <a href="https://lishengzhi.com/edgebench-verified/">EdgeBench Verified</a>, an audit of the hidden graders behind the EdgeBench agent leaderboard. Previously, I was at <a href="https://reka.ai/">Reka AI</a> (contributing to Reka-flash-3), <a href="https://tifin.com/">TIFIN</a> (JPMorgan-backed fintech), and <a href="https://calahealth.com/">Cala Health</a> (3 patents on neurostimulation devices, now Medicare-covered). My research focuses on LLM post-training and evaluation, coding agents, AI for scientific research, and multi-modal LLMs.
                 </p>
                 <p class="icon-links">
                     <a href="mailto:alex.shengzhi@gmail.com" title="Email"><i class="fas fa-envelope"></i> Email</a>
@@ -44,9 +44,10 @@
     <h2>News</h2>
     <div class="news-box">
         <table class="news-table">
+            <tr><td class="news-date">[Oct 2026]</td><td>Released <strong><a href="https://lishengzhi.com/edgebench-verified/">EdgeBench Verified</a></strong>: graders in 32 of 51 public EdgeBench tasks score some submissions wrongly; fixes published for 31 (<a href="https://lishengzhi.com/edgebench-verified/zh/index.html">中文</a>).</td></tr>
             <tr><td class="news-date">[Oct 2026]</td><td>Released <strong>Video Evidence Indexing</strong>: learning where to look from cheap video previews for token-budgeted long-video QA.</td></tr>
             <tr><td class="news-date">[Sep 2026]</td><td>Released <strong><a href="https://theappliedscientist.github.io/">AppliedScientist</a></strong>: an AI scientist that revises rejected papers under an iterative AI reviewer, resolving 85% of execution-related weaknesses.</td></tr>
-            <tr><td class="news-date">[Jun 2026]</td><td>Released <strong><a href="https://togetherbench.com">SWE-Together</a></strong> (project co-lead): evaluating coding agents in interactive user sessions. Accepted to an <strong>ICLR 2026 workshop</strong>.</td></tr>
+            <tr><td class="news-date">[Jun 2026]</td><td>Released <strong><a href="https://togetherbench.com">SWE-Together</a></strong> (project co-lead): evaluating coding agents in interactive user sessions. Accepted to an <strong>ICLR 2026 workshop</strong>; already cited 10+ times.</td></tr>
             <tr><td class="news-date">[Apr 2026]</td><td>Released <strong><a href="https://pushupbench.com/">PushupBench</a></strong>: frontier VLMs still can't count pushups. Now part of <code>lmms-eval</code>.</td></tr>
             <tr><td class="news-date">[Mar 2026]</td><td>Released <strong>IntelliAsk</strong>: learning to ask high-quality research questions via RLVR. Outperforms GPT-5 and Gemini 2.5 Pro.</td></tr>
             <tr><td class="news-date">[Jun 2025]</td><td>Joined <strong>Meta</strong> as Research Engineer, now on <strong>Muse post-training</strong>.</td></tr>
@@ -68,6 +69,27 @@
 
     <table class="pub-table">
 
+        <!-- EdgeBench Verified 2026 -->
+        <tr>
+<td class="pub-text-td">
+                <span class="pub-title">
+                    <a href="https://lishengzhi.com/edgebench-verified/">EdgeBench Verified: An Audit of the Graders Behind the 51 Public EdgeBench Tasks</a>
+                </span>
+                <br>
+                <strong>Shengzhi Li</strong>
+                <br>
+                <em>Technical report, Oct 2026</em>
+                <br>
+                <span class="pub-desc">Tests each hidden EdgeBench grader with correct, broken and to-the-letter submissions. Graders in 32 of 51 tasks score some submissions wrongly (e.g. correct solutions scored zero, broken programs given full credit, one task capped at 21/100); fixes published for 31 tasks and verified side by side. The top two leaderboard places can no longer be confirmed.</span>
+                <br>
+                <span class="pub-links">
+                    <a href="https://lishengzhi.com/edgebench-verified/">[Website]</a>
+                    <a href="https://lishengzhi.com/edgebench-verified/zh/index.html">[中文]</a>
+                    <a href="https://github.com/findalexli/edgebench-verified">[Code &amp; Fixes]</a>
+                </span>
+            </td>
+        </tr>
+
         <!-- SWE-Together 2026 -->
         <tr>
 <td class="pub-text-td">
@@ -77,7 +99,7 @@
                 <br>
                 Yifan Wu*, Zhuokai Zhao, Songlin Li, Ho Hin Lee, Jiacheng Zhu, Shirley Wu, Tianhe Yu, Serena Li, Lizhu Zhang, Xiangjun Fan, <strong>Shengzhi Li*</strong>
                 <br>
-                <em>ICLR 2026 Workshop</em> &middot; <em>arXiv 2026</em> &middot; *Project Co-Lead
+                <em>ICLR 2026 Workshop</em> &middot; <em>arXiv 2026 (cited 10+ times)</em> &middot; *Project Co-Lead
                 <br>
                 <span class="pub-desc">A multi-turn coding-agent benchmark of 109 repository-level tasks reconstructed from 11,260 real user&ndash;agent sessions, replayed with a reactive user simulator. Agents are scored on both final correctness and how many user corrections they need.</span>
                 <br>
