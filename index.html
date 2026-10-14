@@ -111,7 +111,7 @@
                 </template>
             </li>
             <li>
-                <a class="thumb" href="assets/figs/full/edgebench-verified.jpg" data-fig="edgebench-verified" aria-label="Open figure: The EdgeBench scoring pipeline and the four places where graders go wrong"><img src="assets/figs/edgebench-verified.jpg" alt="The EdgeBench scoring pipeline and the four places where graders go wrong" loading="lazy"></a>
+                <a class="thumb" href="assets/figs/full/edgebench-verified.jpg" data-fig="edgebench-verified" aria-label="Open figure: Original versus fixed checker on a correct and two broken exchange engines"><img src="assets/figs/edgebench-verified.jpg" alt="Original versus fixed checker on a correct and two broken exchange engines" loading="lazy"></a>
                 <div class="body">
                     <a class="title" href="https://lishengzhi.com/edgebench-verified/">EdgeBench Verified: An Audit of the Graders Behind the 51 Public EdgeBench Tasks</a>
                     <div class="authors"><b>Shengzhi Li</b></div>
@@ -119,12 +119,12 @@
                     <p class="desc">A benchmark is only as good as its grader. I tested every hidden grader in EdgeBench the way you would test any program.</p>
                 </div>
                 <template id="fig-edgebench-verified">
-                    <img src="assets/figs/full/edgebench-verified.jpg" alt="The EdgeBench scoring pipeline and the four places where graders go wrong">
+                    <img src="assets/figs/full/edgebench-verified.jpg" alt="Original versus fixed checker on a correct and two broken exchange engines">
                     <div class="cap">
                         <p class="cap-title">EdgeBench Verified</p>
                         <p><b>The question.</b> EdgeBench ranks AI agents on 51 public engineering and science tasks. An agent works for hours and a hidden grader program turns its submission into a score from 0 to 100. Nobody checks the graders.</p>
-                        <p><b>The figure.</b> How a submission becomes a leaderboard number: the grader produces a raw result, which is mapped to 0&ndash;100, the best score of each run is kept, and runs and tasks are averaged. The red markers are the four places we found it going wrong: (1) accepting wrong work, (2) rejecting correct work or enforcing an unstated rule, (3) a score scale that is unreachable or mismeasured, (4) keeping the wrong submission.</p>
-                        <p><b>How it works.</b> Each grader is fed correct work, broken work and work that follows the instructions to the letter. Fixed graders are checked side by side against the originals on the same submissions, and against a public agent run where one exists.</p>
+                        <p><b>The figure.</b> One task, start to finish. The agent must make a stock-exchange matching engine faster without changing what it does. The original checker only confirms that money balances and the order books match, so an engine that charges sellers the wrong fee and one that never delivers trade messages both pass and are scored on speed, and their speed scores fall inside the correct engine's run-to-run noise. The fixed checker first runs the project's own 33 tests: the correct engine still passes and both broken engines score 0.</p>
+                        <p><b>How it works.</b> Every one of the 51 graders gets the same treatment: it is fed correct work, broken work and work that follows the instructions to the letter. Fixed graders are checked side by side against the originals on the same submissions, and against a public agent run where one exists.</p>
                         <p><b>What we found.</b> 32 of 51 graders score some submissions wrongly: correct solutions get zero, broken programs get full credit, and on one task no submission can exceed 21/100. Fixes are published for 31 tasks and 1 task is removed. Regrading one real run moves a score from 3.8 to 41.2, and the order of the top two leaderboard entries can no longer be confirmed.</p>
                         <p class="cap-links"><a href="https://lishengzhi.com/edgebench-verified/">site</a> &middot; <a href="https://lishengzhi.com/edgebench-verified/zh/index.html">中文</a> &middot; <a href="https://github.com/findalexli/edgebench-verified">code</a></p>
                     </div>
@@ -135,7 +135,7 @@
         <h3>AI for science</h3>
         <ul class="papers">
             <li>
-                <a class="thumb" href="assets/figs/full/appliedscientist.jpg" data-fig="appliedscientist" aria-label="Open figure: The AppliedScientist revision loop with an AI reviewer"><img src="assets/figs/appliedscientist.jpg" alt="The AppliedScientist revision loop with an AI reviewer" loading="lazy"></a>
+                <a class="thumb" href="assets/figs/full/appliedscientist.jpg" data-fig="appliedscientist" aria-label="Open figure: Share of reviewer-identified weaknesses resolved, by type"><img src="assets/figs/appliedscientist.jpg" alt="Share of reviewer-identified weaknesses resolved, by type" loading="lazy"></a>
                 <div class="body">
                     <a class="title" href="https://theappliedscientist.github.io/">AppliedScientist: Automated Scientific Revision Through Iterative AI Reviewing</a>
                     <div class="authors">Vidushee Vats, Karun Sharma, <b>Shengzhi Li</b>, Shichao Pei</div>
@@ -143,12 +143,12 @@
                     <p class="desc">An AI scientist revises rejected papers while an AI reviewer keeps grading them. It fixes experiments well and ideas rarely.</p>
                 </div>
                 <template id="fig-appliedscientist">
-                    <img src="assets/figs/full/appliedscientist.jpg" alt="The AppliedScientist revision loop with an AI reviewer">
+                    <img src="assets/figs/full/appliedscientist.jpg" alt="Share of reviewer-identified weaknesses resolved, by type">
                     <div class="cap">
                         <p class="cap-title">AppliedScientist</p>
                         <p><b>The question.</b> AI reviewers are usually judged on how good their reviews look. But a review only matters if acting on it makes the paper better. Can we measure that directly?</p>
-                        <p><b>The figure.</b> Left: the AI scientist checks each reviewer suggestion, runs new experiments, analyzes the results and rewrites the manuscript. Right: the AI reviewer reads each revision from scratch, searches the literature and returns structured feedback for the next round. The reviewer keeps no memory of earlier rounds, so its scores are not anchored by its own past judgments.</p>
-                        <p><b>How it works.</b> 30 ICLR papers (25 rejected, 5 borderline accepted) go through five rounds of revision, starting from the real venue reviews, from AI reviews, or from a fixed self-revision prompt. An independent reviewer that never guides the scientist scores the same papers as a check.</p>
+                        <p><b>The figure.</b> Of the weaknesses the AI reviewer raised, how many the AI scientist resolved over five rounds, grouped by type. Execution weaknesses (presentation, analysis, rigor, missing baselines, scope) are mostly fixed, 63&ndash;100% depending on type. Idea and novelty weaknesses are almost never fixed: 2 of 18 (11%).</p>
+                        <p><b>How it works.</b> An AI scientist checks each reviewer suggestion, runs new experiments, analyzes the results and rewrites the manuscript. An AI reviewer reads each revision from scratch, with no memory of earlier rounds, searches the literature and returns structured feedback. 30 ICLR papers (25 rejected, 5 borderline accepted) go through five rounds of revision, starting from the real venue reviews, from AI reviews, or from a fixed self-revision prompt. An independent reviewer that never guides the scientist scores the same papers as a check.</p>
                         <p><b>What we found.</b> Reviewer-guided revision beats self-revision. Scores rise from 5.37 to 6.53 under our reviewer and from 5.50 to 6.15 under the independent one. The system resolves 128 of 150 execution weaknesses (85%) but only 2 of 18 idea weaknesses: revision can fix the experiments, not the idea.</p>
                         <p class="cap-links"><a href="https://arxiv.org/abs/2609.14738">paper</a> &middot; <a href="https://theappliedscientist.github.io/">project</a> &middot; <a href="https://github.com/TheAppliedScientist/TheAppliedScientist">code</a></p>
                     </div>
@@ -218,7 +218,7 @@
                 </template>
             </li>
             <li>
-                <a class="thumb" href="assets/figs/full/vei.jpg" data-fig="vei" aria-label="Open figure: Video Evidence Indexing pipeline"><img src="assets/figs/vei.jpg" alt="Video Evidence Indexing pipeline" loading="lazy"></a>
+                <a class="thumb" href="assets/figs/full/vei.jpg" data-fig="vei" aria-label="Open figure: Frames chosen by uniform sampling, CLIP ranking and Video Evidence Indexing for one question"><img src="assets/figs/vei.jpg" alt="Frames chosen by uniform sampling, CLIP ranking and Video Evidence Indexing for one question" loading="lazy"></a>
                 <div class="body">
                     <a class="title" href="https://arxiv.org/abs/2610.00757">Video Evidence Indexing: Learning Where to Look from Video Previews for Token-Budgeted Long-Video Question Answering</a>
                     <div class="authors">Haowen Guan, <b>Shengzhi Li</b>, Shichao Pei</div>
@@ -226,12 +226,12 @@
                     <p class="desc">Watch a cheap low-resolution preview first, then spend the high-resolution frame budget only where the answer is.</p>
                 </div>
                 <template id="fig-vei">
-                    <img src="assets/figs/full/vei.jpg" alt="Video Evidence Indexing pipeline">
+                    <img src="assets/figs/full/vei.jpg" alt="Frames chosen by uniform sampling, CLIP ranking and Video Evidence Indexing for one question">
                     <div class="cap">
                         <p class="cap-title">Video Evidence Indexing</p>
                         <p><b>The question.</b> Long-video QA is limited by the cost of visual tokens and by a VLM's fixed context. A question may need the whole video for coverage, but its answer usually rests on a few moments.</p>
-                        <p><b>The figure.</b> (1) A dense, low-resolution video preview gives cheap coverage of the whole video. (2) Video Evidence Indexing reads the preview and decides which moments matter and how to split a fixed high-resolution frame budget among them. (3) Those frames form a compact evidence set. (4) The model answers using both the preview and the evidence.</p>
-                        <p><b>How it works.</b> There are no frame-level labels saying where the evidence is, so we use privileged self-distillation: a teacher that knows the answer guides the normal indexing policy on the student's own traces. One policy supports previews at 1, 6, 12 and 24 visual tokens per frame.</p>
+                        <p><b>The figure.</b> One real question: on a German Christmas tree decorated with apples, candles and berries, which decoration is most numerous? All three methods get the same high-resolution frame budget. Uniform sampling spends it on a news intro and unrelated shots and answers wrong. Ranking frames by CLIP similarity to the question returns near-duplicate trees, many undecorated, and also answers wrong. Video Evidence Indexing picks varied close-ups of the decorated tree and answers correctly: berries.</p>
+                        <p><b>How it works.</b> The model first watches a dense, low-resolution preview of the whole video, decides which moments matter and how to split a fixed high-resolution frame budget among them, then answers from the preview plus those frames. There are no frame-level labels saying where the evidence is, so we use privileged self-distillation: a teacher that knows the answer guides the normal indexing policy on the student's own traces. One policy supports previews at 1, 6, 12 and 24 visual tokens per frame.</p>
                         <p><b>What we found.</b> Indexing improves accuracy under tight visual budgets, and self-distillation improves both QA accuracy and how well the selected frames cover the true evidence.</p>
                         <p class="cap-links"><a href="https://arxiv.org/abs/2610.00757">paper</a></p>
                     </div>
