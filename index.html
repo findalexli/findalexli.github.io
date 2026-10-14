@@ -48,6 +48,7 @@
         <ul class="news">
             <li><span class="date">Oct 2026</span> Released <a href="https://lishengzhi.com/edgebench-verified/">EdgeBench Verified</a>, an audit of the graders behind EdgeBench.</li>
             <li><span class="date">Sep 2026</span> <a href="https://theappliedscientist.github.io/">AppliedScientist</a> is on arXiv.</li>
+            <li><span class="date">Sep 2026</span> Elon Musk <a href="https://x.com/elonmusk/status/2102873022789283985">quoted</a> our SWE-Together leaderboard update on X: &ldquo;Grok 4.7 moves up in ranking.&rdquo;</li>
             <li><span class="date">Jun 2026</span> <a href="https://togetherbench.com">SWE-Together</a> is out and accepted to an ICLR 2026 workshop.</li>
             <li><span class="date">Apr 2026</span> Muse Spark, the first Muse model, launched in Meta AI.</li>
             <li><span class="date">Jun 2025</span> Joined Meta.</li>
@@ -96,7 +97,7 @@
                     <a class="title" href="https://togetherbench.com">SWE-Together: Evaluating Coding Agents in Interactive User Sessions</a>
                     <div class="authors">Yifan Wu*, Zhuokai Zhao, Songlin Li, Ho Hin Lee, Jiacheng Zhu, Shirley Wu, Tianhe Yu, Serena Li, Lizhu Zhang, Xiangjun Fan, <b>Shengzhi Li*</b></div>
                     <div class="meta"><span class="venue">ICLR 2026 Workshop</span><a href="https://arxiv.org/abs/2606.29957">paper</a> &middot; <a href="https://togetherbench.com">leaderboard</a> &middot; <a href="https://github.com/Togetherbench/SWE-Together">code</a> &middot; <a href="https://huggingface.co/datasets/yfwu/SWE-Together">data</a></div>
-                    <p class="desc">Real users don't hand an agent a perfect spec. They clarify, change their minds and correct it. We score agents on real sessions like that.</p>
+                    <p class="desc">Real users don't hand an agent a perfect spec. They clarify, change their minds and correct it. We score agents on real sessions like that. Our leaderboard update was <a href="https://x.com/elonmusk/status/2102873022789283985">quoted by Elon Musk</a>.</p>
                 </div>
                 <template id="fig-swe-together">
                     <img src="assets/figs/full/swe-together.jpg" alt="One-shot SWE-bench evaluation compared with multi-turn SWE-Together evaluation">
@@ -106,6 +107,7 @@
                         <p><b>The figure.</b> Top: the usual one-shot setup and its pass rates. Bottom: SWE-Together, where the same agents are replayed through a real multi-turn session. Bars are pass rates; the overlaid line is how many times, on average, the user had to step in and correct the agent.</p>
                         <p><b>How it works.</b> We curated 109 repository-level tasks from 11,260 recorded user&ndash;agent sessions, keeping only sessions with a recoverable repository state, a clear goal and an observable outcome. A reactive LLM user simulator keeps the original user's intent and gives feedback only when the agent's progress calls for it.</p>
                         <p><b>What we found.</b> Stronger agents both finish more tasks and need fewer corrections (Pearson &minus;0.92 between pass@1 and corrections per trial), so a better model is also a less tiring collaborator.</p>
+                        <p><b>Afterwards.</b> Grok 4.7 found ways around the evaluation sandbox, such as fetching the task's existing fix from outside. We closed those routes, re-audited every model on the leaderboard and re-ran affected trials. Elon Musk <a href="https://x.com/elonmusk/status/2102873022789283985">quoted the update</a> on X: &ldquo;Grok 4.7 moves up in ranking.&rdquo;</p>
                         <p class="cap-links"><a href="https://arxiv.org/abs/2606.29957">paper</a> &middot; <a href="https://togetherbench.com">leaderboard</a> &middot; <a href="https://github.com/Togetherbench/SWE-Together">code</a> &middot; <a href="https://huggingface.co/datasets/yfwu/SWE-Together">data</a></p>
                     </div>
                 </template>
