@@ -179,6 +179,12 @@ ul {
 }
 
 /* ---------- Publications (Barron-style table) ---------- */
+.section-note {
+    font-size: 0.9em;
+    color: #666;
+    margin: -4px 0 8px;
+}
+
 .pub-table {
   width: 100%;
   margin-bottom: 8px;
